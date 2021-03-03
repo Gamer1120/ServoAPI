@@ -18,7 +18,7 @@ def check_auth(header):
 def turn():
     auth = request.headers.get("Authorization")
     if auth and check_auth(auth):
-        # TODO: Steer servo motor
+        os.system("python turn180.py")
         return "ok"
     return "Unauthorized", 403
 
