@@ -16,7 +16,7 @@ def turn():
     auth = request.headers.get("Authorization")
     if auth and check_auth(auth):
         print("Running servo turn script!")
-        os.system("python /home/pi/dev/ServoAPI/turn180.py")
+        os.system("/usr/bin/python /home/pi/dev/ServoAPI/turn180.py")
         return "ok"
     print("Attempt to make a turn without authorization!")
     return "Unauthorized", 403
